@@ -15,8 +15,10 @@ $ npm run dev
 $ npm start
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-
-## Backpack
-
-We use [backpack](https://github.com/palmerhq/backpack) to watch and build the application, so you can use the latest ES6 features (module syntax, async/await, etc.).
+## 开发流程
+1. 项目初始化（done）
+2. 博客功能设计
+3. 页面布局开发
+4. 安装mysql，后端接口开发
+5. 数据对接
+6. 添加测试
