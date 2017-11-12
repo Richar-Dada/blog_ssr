@@ -1,5 +1,7 @@
 <template>
-  <h1>hello{{ name }}</h1>
+  <div>
+    <p>{{ name }}</p>
+  </div>
 </template>
 
 <script>
@@ -13,3 +15,5 @@
 <style scoped>
 
 </style>
+
+

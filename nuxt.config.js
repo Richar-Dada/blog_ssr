@@ -17,11 +17,12 @@ module.exports = {
   ** Global CSS
   */
   css: ['~/assets/css/main.css'],
+  plugins: ['~/plugins/elementui'],
   /*
   ** Add axios globally
   */
   build: {
-    vendor: ['axios'],
+    vendor: ['axios', 'element-ui'],
     /*
     ** Run ESLINT on save
     */
