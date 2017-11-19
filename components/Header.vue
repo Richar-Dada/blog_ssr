@@ -63,5 +63,6 @@
 .menu{
 	width: 1000px;
 	margin: 0 auto;
+	height: 60px;
 }
 </style>
