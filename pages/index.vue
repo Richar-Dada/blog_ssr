@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     <el-row :gutter="20">
-      <el-col class="el-col" :span="6" v-for="(o, index) in 8" :key="o">
+      <el-col class="el-col" :span="6" v-for="(item, index) in posts" :key="item.id">
         <el-card :body-style="{ padding: '10px' }">
           <img src="../assets/img/hamburger.png" class="image">
           <div style="padding: 14px;">
@@ -13,15 +13,39 @@
         </el-card>
       </el-col>
     </el-row>
+    <p>{{ posts }}</p>
   </div>
 </template>
 
 <script>
+  import axios from 'axios'
+
   export default {
-    data: () => ({
-      name: 'dadatang',
-      currentDate: new Date()
-    })
+    async asyncData () {
+      let result = await axios.get('/api/users')
+      console.log('asyncData')
+      console.log(result)
+      return {
+        posts: result.data
+      }
+    },
+    data () {
+      return {
+        currentDate: 123
+      }
+    }
+    // }),
+    // created () {
+    //   console.log('create')
+    //   axios.get('/api/users')
+    //     .then((res) => {
+    //       console.log('success')
+    //       return { posts: res.data.slice(0, 5) }
+    //     })
+    //     .catch((err) => {
+    //       console.log(err)
+    //     })
+    // }
   }
 </script>
 

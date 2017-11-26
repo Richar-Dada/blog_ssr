@@ -17,7 +17,10 @@ module.exports = {
   ** Global CSS
   */
   css: ['~/assets/css/main.css'],
-  plugins: ['~/plugins/elementui'],
+  plugins: [
+    { src: '~/plugins/elementui'},
+    { src: '~/plugins/axios'}
+  ],
   /*
   ** Add axios globally
   */

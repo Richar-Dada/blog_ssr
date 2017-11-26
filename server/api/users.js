@@ -6,12 +6,14 @@ const router = Router()
 const users = [
   { name: 'Alexandre' },
   { name: 'Pooya' },
-  { name: 'Sébastien' },
+  { name: 'Sébastien' }
 ]
 
 /* GET users listing. */
 router.get('/users', function (req, res, next) {
-  res.json(users)
+  console.log('get----')
+  console.log(users)
+  res.json(JSON.stringify(users))
 })
 
 /* GET user by ID. */

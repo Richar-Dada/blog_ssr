@@ -1,4 +1,5 @@
 import express from 'express'
+import bodyParser from 'body-parser'
 import { Nuxt, Builder } from 'nuxt'
 
 import api from './api'
@@ -6,6 +7,9 @@ import api from './api'
 const app = express()
 const host = process.env.HOST || '127.0.0.1'
 const port = process.env.PORT || 3000
+
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
 app.set('port', port)
 
