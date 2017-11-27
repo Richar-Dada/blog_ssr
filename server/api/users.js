@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import blogService from '../../service/blogService'
 
 const router = Router()
 
@@ -23,6 +24,14 @@ router.get('/users/:id', function (req, res, next) {
     res.json(users[id])
   } else {
     res.sendStatus(404)
+  }
+})
+
+router.get('/blogs', function(req, res, next) {
+  try {
+    blogService.list((result) => { res.json(result) })
+  } catch (error) {
+    res.json({ code: 500, message: '程序发生错误！' })
   }
 })
 
