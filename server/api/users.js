@@ -28,8 +28,6 @@ router.get('/users/:id', function (req, res, next) {
 })
 
 router.get('/blogs', function(req, res, next) {
-  console.log('server')
-  console.log(blogService.list)
   try {
     blogService.list((result) => { res.json(result) })
   } catch (error) {
