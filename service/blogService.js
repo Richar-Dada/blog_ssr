@@ -3,6 +3,7 @@ import Blog from '../models/bolg'
 const blogModel = new Blog()
 
 let list = (callback) => {
+    console.log('service')
     blogModel.list((err, blogs) => {
         if (err) {
             return callback({ code: 404, message: 'no result' })
@@ -11,4 +12,8 @@ let list = (callback) => {
     })
 }
 
-module.exports.list = list
+let xxx = () => {}
+
+export default {
+    list: list
+}

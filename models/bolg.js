@@ -8,6 +8,7 @@ export default class Bolg {
             if (err) {
                 return callback(true)
             }
+            callback(false, result)
         })
     }
 }

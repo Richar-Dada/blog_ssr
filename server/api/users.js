@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import blogService from '../../service/blogService'
+import  blogService from '../../service/blogService'
 
 const router = Router()
 
@@ -28,6 +28,8 @@ router.get('/users/:id', function (req, res, next) {
 })
 
 router.get('/blogs', function(req, res, next) {
+  console.log('server')
+  console.log(blogService.list)
   try {
     blogService.list((result) => { res.json(result) })
   } catch (error) {

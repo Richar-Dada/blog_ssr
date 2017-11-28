@@ -23,8 +23,6 @@
   export default {
     async asyncData () {
       let result = await axios.get('/api/blogs')
-      console.log('asyncData')
-      console.log(result)
       return {
         posts: result.data
       }
