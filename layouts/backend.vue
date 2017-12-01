@@ -4,15 +4,15 @@
         <el-container>
             <el-aside width="200px">
                 <el-menu
-                default-active="2"
+                default-active="1"
                 class="el-menu-vertical-demo"
                 @open=""
                 @close="">
-                    <el-menu-item index="1">
+                    <el-menu-item index="1" @click="go('list')">
                         <i class="el-icon-tickets"></i>
                         <span slot="title">博客列表</span>
                     </el-menu-item>
-                    <el-menu-item index="2">
+                    <el-menu-item index="2" @click="go('add')">
                         <i class="el-icon-plus"></i>
                         <span slot="title">新增博客</span>
                     </el-menu-item>
@@ -26,7 +26,21 @@
 </template>
 
 <script>
-    export default {}
+    export default {
+      methods: {
+        go (key) {
+          switch (key) {
+            case 'list':
+              window.location.href = '/backend/list'
+              break
+            case 'add':
+              window.location.href = '/backend/add'
+              break
+            default: break
+          }
+        }
+      }
+    }
 </script>
 
 <style lang="scss">
@@ -53,7 +67,6 @@
   .el-main {
     background-color: #E9EEF3;
     color: #333;
-    text-align: center;
   }
   
   #__nuxt > .el-container {

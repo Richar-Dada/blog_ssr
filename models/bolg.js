@@ -25,9 +25,9 @@ export default class Bolg {
     console.log(values)
     db.query(sql, values, (err, result) => {
       if (err) {
-        return callback(false)
+        return callback(true)
       }
-      callback(true)
+      callback(false)
     })
   }
 }
