@@ -22,3 +22,6 @@ $ npm start
 4. 安装mysql，后端接口开发
 5. 数据对接
 6. 添加测试
+
+## 坑
+- axios需要配置baseUrl而且要在nuxt.config.js配置
