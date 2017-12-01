@@ -16,10 +16,16 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['~/assets/css/main.css'],
+  css: [
+    '~/assets/css/main.css',
+    'quill/dist/quill.snow.css',
+    'quill/dist/quill.bubble.css',
+    'quill/dist/quill.core.css'
+    ],
   plugins: [
     { src: '~/plugins/elementui'},
-    { src: '~/plugins/axios'}
+    { src: '~/plugins/axios'},
+    { src: '~/plugins/quillEditor', ssr: false }
   ],
   /*
   ** Add axios globally

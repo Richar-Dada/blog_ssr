@@ -14,9 +14,9 @@ let query = function (sql, params, callback) {
                 connection.release()
                 if (err) {
                     console.log('db error17:' + err)
-                    return callback(true)
+                    return callback(false)
                 }
-                callback(false, result)
+                callback(true, result)
             })
         })
     } catch (err) {
