@@ -19,4 +19,12 @@ router.get('/blog/list', function(req, res, next) {
   }
 })
 
+router.get('/blog/:id', function(req, res, next) {
+  try {
+    blogService.getById(req.params.id, (result) => { res.json(result) })
+  } catch (error) {
+    res.json({ code: 500, message: '程序发生错误！' })
+  }
+})
+
 export default router

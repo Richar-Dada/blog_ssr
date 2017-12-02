@@ -20,7 +20,17 @@ let add = (blog, callback) => {
   })
 }
 
+const getById = (id, callback) => {
+  blogModel.one(id, (err, res) => {
+    if (err) {
+      return callback({ code: 404, message: 'no result with id' })
+    }
+    callback({ code: 200, message: 'success', blog: res })
+  })
+}
+
 export default {
     list: list,
-    add: add
+    add: add,
+    getById, getById
 }

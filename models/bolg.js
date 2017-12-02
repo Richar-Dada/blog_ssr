@@ -30,4 +30,14 @@ export default class Bolg {
       callback(false)
     })
   }
+
+  one (blogId, callback) {
+    const sql = 'SELECT * FROM blogList WHERE id = ?'
+    db.query(sql, [blogId], (err, result) => {
+      if (err) {
+        callback(true)
+      }
+      callback(false, result)
+    })
+  }
 }

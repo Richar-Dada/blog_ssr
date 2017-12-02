@@ -47,7 +47,7 @@
     },
     methods: {
       handleClick (row) {
-        console.log(row)
+        window.location.href = '/' + row.id
       }
     }
   }

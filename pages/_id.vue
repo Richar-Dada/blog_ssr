@@ -1,44 +1,50 @@
 <template>
-  <section class="container">
-    <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
+  <section class="blog-container">
     <h1 class="title">
-      User
+      {{ blog.tit }}
     </h1>
     <h2 class="info">
-      {{ user.name }}
+      {{ blog.createDate }} {{ ' ' + blog.author }}
     </h2>
-    <nuxt-link class="button" to="/">
-      Users
-    </nuxt-link>
+    <div class="content" v-html="blog.blogContent">
+    </div>
   </section>
 </template>
 
 <script>
-import axios from '~/plugins/axios'
+import axios from 'axios'
 
 export default {
   name: 'id',
   asyncData ({ params, error }) {
-    return axios.get('/api/users/' + params.id)
+    console.log(params.id)
+    return axios.get('/api/blog/' + params.id)
       .then((res) => {
-        return { user: res.data }
+        console.log(res.data.blog[0])
+        return { blog: res.data.blog[0] }
       })
       .catch((e) => {
-        error({ statusCode: 404, message: 'User not found' })
+        error({ statusCode: 404, message: 'blog not found' })
       })
   },
   head () {
     return {
-      title: `User: ${this.user.name}`
+      title: `${this.blog.tit}`
     }
   }
 }
 </script>
 
 <style scoped>
+.blog-container{
+  width: 1000px;
+  margin: 20px auto;
+}
 .title
 {
+  font-size: 28px;
   margin-top: 30px;
+  font-weight: bold;
 }
 .info
 {
@@ -46,6 +52,9 @@ export default {
   color: #9aabb1;
   margin: 0;
   margin-top: 10px;
+  font-size: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #ccc;
 }
 .button
 {
