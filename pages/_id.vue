@@ -4,7 +4,7 @@
       {{ blog.tit }}
     </h1>
     <h2 class="info">
-      {{ blog.createDate }} {{ ' ' + blog.author }}
+      {{ blog.createDate | moment }} {{ ' ' + blog.author }}
     </h2>
     <div class="content" v-html="blog.blogContent">
     </div>

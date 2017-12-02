@@ -25,7 +25,8 @@ module.exports = {
   plugins: [
     { src: '~/plugins/elementui'},
     { src: '~/plugins/axios'},
-    { src: '~/plugins/quillEditor', ssr: false }
+    { src: '~/plugins/quillEditor', ssr: false },
+    { src: '~/plugins/filter' }
   ],
   /*
   ** Add axios globally
