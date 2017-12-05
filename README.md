@@ -25,3 +25,4 @@ $ npm start
 
 ## 坑
 - axios需要配置baseUrl而且要在nuxt.config.js配置
+- mysql存储中文，字符集设为：utf8mb4
