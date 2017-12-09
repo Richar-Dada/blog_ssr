@@ -29,8 +29,18 @@ const getById = (id, callback) => {
   })
 }
 
+const update = (blog, callback) => {
+  blogModel.update(blog, (err, res) => {
+    if (err) {
+      return callback({ code: 404, message: 'update fail' })
+    }
+    callback({ code: 200, message: 'success' })
+  })
+}
+
 export default {
     list: list,
     add: add,
-    getById, getById
+    getById, getById,
+    update: update
 }

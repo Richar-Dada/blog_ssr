@@ -27,4 +27,14 @@ router.get('/blog/:id', function(req, res, next) {
   }
 })
 
+router.post('/blog/update', function(req, res, next) {
+  console.log('post')
+  console.log(req.body)
+  try {
+    blogService.update(req.body, (result) => { res.json(result) })
+  } catch (error) {
+    res.json({ code: 500, message: '程序发生错误！ ' })
+  }
+})
+
 export default router

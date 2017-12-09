@@ -19,7 +19,6 @@
             </el-form-item>
             <el-form-item>
               <el-button type="primary" @click="onSubmit">提交</el-button>
-              <el-button @click="resetForm('ruleForm')">重置</el-button>
             </el-form-item>
             </el-form>
     </div>
@@ -80,12 +79,14 @@
         if (this.content.length > 0) {
           let isSubmit = window.confirm('确定提交？')
           if (isSubmit) {
-            let submitResult = await axios.post('/api/blog/add', {
-              title: this.ruleForm.name,
+            let submitResult = await axios.post('/api/blog/update', {
+              id: this.blog.id,
+              title: this.blog.tit,
               author: 'Richar',
-              desc: this.ruleForm.desc,
+              desc: this.blog.blogDesc,
               content: this.content
             })
+            console.log('--------')
             console.log(submitResult)
             if (submitResult.data.code === 200) {
               alert('博客提交成功！')
@@ -109,11 +110,6 @@
       onEditorChange ({ editor, html, text }) {
         console.log('editor change!', editor, html, text)
         this.content = html
-      },
-      resetForm (formName) {
-        console.log('reset')
-        console.log(this.$refs[formName].resetFields)
-        this.$refs[formName].resetFields()
       }
     }
   }
