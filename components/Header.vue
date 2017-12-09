@@ -16,8 +16,8 @@
 					background-color="#545c64"
 					text-color="#fff"
 					active-text-color="#ffd04b">
-					<el-menu-item index="1">首页</el-menu-item>
-					<el-menu-item index="3"><a href="https://www.ele.me" target="_blank">关于</a></el-menu-item>
+					<el-menu-item index="1"><a href="/">首页</a></el-menu-item>
+					<el-menu-item index="3"><a href="/about">关于</a></el-menu-item>
 				</el-menu>
 			</div>
 		</div>

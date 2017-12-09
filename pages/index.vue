@@ -13,7 +13,6 @@
         </el-card>
       </el-col>
     </el-row>
-    <p>{{ posts }}</p>
   </div>
 </template>
 
@@ -32,18 +31,6 @@
         currentDate: 123
       }
     }
-    // }),
-    // created () {
-    //   console.log('create')
-    //   axios.get('/api/users')
-    //     .then((res) => {
-    //       console.log('success')
-    //       return { posts: res.data.slice(0, 5) }
-    //     })
-    //     .catch((err) => {
-    //       console.log(err)
-    //     })
-    // }
   }
 </script>
 

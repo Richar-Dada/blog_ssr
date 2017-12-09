@@ -1,6 +1,8 @@
 # blog
 
 > blog for dadatang
+> 这是一个nuxt的练习网站，技术组成nuxt+vue+nodejs+express，功能比较简单，一个首页用作数据展示，和一个简单的后台管理系统，实现了增改查功能。
+> **学习目的：**熟悉nuxt的主要API，了解nodejs+express+mysql技术栈
 
 ## Build Setup
 
@@ -17,10 +19,10 @@ $ npm start
 
 ## 开发流程
 1. 项目初始化（done）
-2. 博客功能设计
-3. 页面布局开发
-4. 安装mysql，后端接口开发
-5. 数据对接
+2. 博客功能设计(首页/博客列表/添加博客/修改博客/博客详情)
+3. 页面布局开发(done)
+4. 安装mysql，后端接口开发(done)
+5. 数据对接(done)
 6. 添加测试
 
 ## 坑
