@@ -5,9 +5,9 @@
         <el-card :body-style="{ padding: '10px' }">
           <img src="../assets/img/hamburger.png" class="image">
           <div style="padding: 14px;">
-            <span>好吃的汉堡</span>
+            <span>{{ item.tit }}</span>
             <div class="bottom clearfix">
-              <time class="time">{{ currentDate }}</time>
+              <time class="time">{{ item.createDate | moment }}</time>
             </div>
           </div>
         </el-card>
@@ -23,7 +23,7 @@
     async asyncData () {
       let result = await axios.get('/api/blogs')
       return {
-        posts: result.data
+        posts: result.data.blogsList
       }
     },
     data () {
